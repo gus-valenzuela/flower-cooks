@@ -1,11 +1,10 @@
 import React from 'react'
-import CountButtom from './ItemCount'
+import ItemList from './ItemList'
 
 function ItemListContainer(props) {
     return (
         <div>
-            <h1>{props.greeting}</h1>
-            <CountButtom stock="5"/>
+            <ItemList/>
         </div>
     );
 }
