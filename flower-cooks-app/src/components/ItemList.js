@@ -25,12 +25,32 @@ function ItemList(){
         }
     ];
 
-    return (
+    function getCartItems() {
+        let miPromesa = new Promise((resolve, reject) => {  
+        setTimeout(()=>{      
+            resolve(products);  
+          }, 2000);
+          setTimeout(()=>{
+          reject("Error obteniendo los datos");
+          }, 2000);
+        });  
+      
+        miPromesa.then( function(valor){
+          console.log(valor);
+        }).catch(
+          function(error){
+            console.log(error);
+        }).finally(
+            function(){
+              alert('Promesa terminada')
+          }
+        )
+      }
+
+      return (
         <div>
-            {
-                products.map((products)=> { return <h5>{products.title}</h5>})
-            }
-        </div>
+           <button onClick={getCartItems}>Ver los productos</button>
+         </div>
     )
 }
 
